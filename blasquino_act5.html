@@ -1,0 +1,298 @@
+<!--Instructions:
+
+Form Layout & Design:
+    Create a web form using simple HTML structure.
+    Use fieldsets to group related input fields, making the form easy to read and navigate.
+
+Form Sections Using Fieldsets:
+    Create the following sections in your form using <fieldset> to group related fields:
+
+Personal Information:  full name, email, phone number, address, and date of birth.
+Education Background: Includes degree type, university name, and graduation date.
+Work Experience:job title, company name, and a text area for job responsibilities.
+Skills: A text area for listing relevant skills.
+Certifications: A field for adding certifications and the date received.
+Resume Upload: A file input for uploading a resume (PDF only).
+
+Form Fields:
+    Use different HTML input types to collect the following information:
+
+Text Inputs: For names, university, job titles, etc.
+Email Input: For collecting an email address.
+Phone Input: For a phone number (u can simply use <input type="tel"> w/out specific formatting).
+Date Input: For selecting a date (e.g., date of birth, graduation date).
+Textarea: For multi-line input (e.g., job responsibilities, skills).
+File Input: For resume upload, accepting only PDF files using accept=".pdf".
+
+Instructions for Grouping with Fieldsets:
+
+Use the <fieldset> tag to group each section. For ex, group all personal info fields inside one fieldset, all education background fields inside another, etc.
+Use the <legend> tag to add a descriptive title to each section (e.g., "Personal Information," "Work Experience").
+
+Button for Submission:
+Add a simple, professional Submit Resume button at the bottom of your form.
+Styling (Optional but Encouraged):
+You are encouraged to add some simple CSS styling to enhance the appearance of your form. For instance:
+Set a maximum width for the form so it doesn’t stretch too wide on large screens.
+Add padding and margin to space out the elements and make the form easier to read.
+
+Use a subtle shadow or border around the form to make it stand out.-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EJ's RESUME BUILDER</title>
+    
+    <style>
+        body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    /*background-color: #79a5e8c3;*/
+    background-image: linear-gradient(to right, rgb(255, 255, 255), #0f7cf8);
+    color: #f5f6f7;
+    font-family: Tahoma;
+    font-size: 16px;
+  }
+
+
+legend {
+    text-align: left;
+    padding: 2.5px 0px 0px 2px;
+    font-weight: bold;
+    font-size: larger;
+    color: #000000;
+}
+  
+  h1 {
+    margin: 1em auto;
+    text-align: center;
+    color: #000000;
+    font-size: 40px;
+  }
+
+  p {
+    margin: 1em auto;
+    text-align: center;
+    color: #000000;
+  }
+  
+  form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+  
+  fieldset {
+    border-width: 1px 2px;
+    border-style: ridge;
+    border-color:rgb(0, 0, 0);
+    margin-top: 60px;
+    margin-bottom: 60px;
+   
+  }
+  
+  fieldset:last-of-type {
+    border-bottom: none;
+  }
+  
+  label {
+    display: block;
+    margin: 0.5rem 0;
+    color: #000000;
+  }
+  
+  input,
+  textarea,
+  select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+  }
+  
+  input, textarea {
+    background-color: #fcfcff;
+    border: 1px solid #0a0a23;
+    color: #000000;
+  }
+  
+  .inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    height: 4em;
+    font-size: 20px;
+    background-color: #ffffff;
+    border-color: rgb(0, 0, 0);
+    min-width: 300px;
+    text-decoration: wavy;
+    color: #000000;
+  }
+  
+  input[type="file"] {
+    padding: 1px 2px;
+  }
+  
+  .inline{
+    display: inline; 
+  }
+
+.respo {
+    margin-bottom: 50px;
+}
+
+.submitfset {
+  border: none;
+}
+
+.top-section{
+  background-color:#ffffff;
+  text-align: center;
+  padding: 35px;
+  height:460px;
+}
+
+.profile{
+  width: 25%; 
+  height: 100%;
+  float:left;
+  display:flex;
+  top: 50%;
+  left: 50%;
+}
+
+.p1{
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.p2{
+  color: #65a4ec;
+  font-size: 30px;
+  margin: 0px;
+  margin-top: 80px;
+  font-family: Tahoma;
+}
+
+.p4{
+  color: #000000;
+  font-size: 25px;
+  margin: 0px;
+  font-family: Tahoma;
+}
+
+.p3{
+  color: #000000;
+  font-size: 25px;
+  margin: 100px;
+  font-family: Tahoma;
+  margin-left: 110px;
+}
+
+.pdf {
+  text-align: left;
+  font-size: smaller;
+}
+    </style>
+  </head>
+
+  <body>
+
+    <div class="top-section">
+        <img src="CVResume.png" class="profile">
+        <p class="p1">EJ's RESUME BUILDER</p>
+        <p class="p4">The Best Online Resume Builder</p>
+        <p class="p2">Easily create the perfect resume for any job using <br> our resume builder platform for free.</p>
+        <p class="p3">              Scroll down to get started.</p>
+    </div>
+    
+   
+    <h1>Resume Builder</h1>
+    <p>Please fill out this form with the required information</p>
+
+    <form action="" method="">
+
+
+        <fieldset>
+            <legend>PERSONAL INFORMATION</legend>
+            <label for="fname">First Name: <input id="fname" name="fname" type="text" required /></label>
+            <label for="mname">Middle Name: <input id="mname" name="mname" type="text" required /></label>
+            <label for="lname">Last Name: <input id="lname" name="lname" type="text" required /></label>
+            <label for="email">Email: <input id="email" name="email" type="email" required /></label>
+            <label for="phone">Telephone Number: <input id="phone" name="phone" type="tel" required /></label>
+            <label for="address">Address: <input id="address" name="address" type="address" required /></label>
+            <label for="bday">Date Of Birth: <input id="bday" name="bday" type="date" required /></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>EDUCATIONAL BACKGROUND</legend>
+            <label for="school">Name of School: <input id="school" name="school" type="text" required /></label>
+            <label for="location">Location: <input id="location" name="location" type="text" required /></label>
+            <label for="degree">Degree: <input id="gpa" name="gpa" type="text" required /></label>
+            <label for="gpa">GPA: <input id="gpa" name="gpa" type="number" required /></label>
+            <label for="graddate">Year Graduated: <input id="graddate" name="graddate" type="date" required /></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>WORK EXPERIENCES</legend>
+            <label for="job">Job Title: <input id="job" name="job" type="text" required /></label>
+            <label for="company">Name of Company: <input id="company" name="company" type="text" required /></label>
+            <label>Responsibilities:</label>
+            <textarea required class="respo" rows="5" cols="30"></textarea>
+
+            <label for="job">Job Title: <input id="job" name="job" type="text" /></label>
+            <label for="company">Name of Company: <input id="company" name="company" type="text" /></label>
+            <label>Responsibilities:</label>
+            <textarea class="respo"  rows="5" cols="30"></textarea>
+
+            <label for="job">Job Title: <input id="job" name="job" type="text" /></label>
+            <label for="company">Name of Company: <input id="company" name="company" type="text" /></label>
+            <label class="respo">Responsibilities:</label>
+            <textarea rows="5" cols="30"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>SKILLS</legend>
+                <textarea rows="8" cols="30"></textarea>
+        </fieldset>
+        
+        <fieldset>
+            <legend>CERTIFICATIONS</legend>
+            <label for="certtitle"> Title of Certification: <input id="certtitle" name="certtitle" type="text" required /></label>
+            <label for="org"> Awarding Organization/Institution: <input id="org" name="org" type="text" required /></label>
+            <label class="respo" for="received"> Date Received: <input id="received" name="received" type="date" required /></label>
+
+            <label for="certtitle"> Title of Certification: <input id="certtitle" name="certtitle" type="text" /></label>
+            <label for="org"> Awarding Organization/Institution: <input id="org" name="org" type="text"  /></label>
+            <label class="respo" for="received"> Date Received: <input id="received" name="received" type="date"  /></label>
+
+            <label for="certtitle"> Title of Certification: <input id="certtitle" name="certtitle" type="text" /></label>
+            <label for="org"> Awarding Organization/Institution: <input id="org" name="org" type="text" /></label>
+            <label for="received"> Date Received: <input id="received" name="received" type="date" /></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Upload Previous/Existing Resume</legend>
+            <p class="pdf">(Only PDF file can be accepted)</p>
+            <label for="resume"> <input id="resume" name="resume" type="file" accept=".pdf"/></label>
+        </fieldset>
+
+        <fieldset class="submitfset">
+        <input type="submit" value="SUBMIT" />
+        </fieldset>
+    
+  </body>
+
